@@ -1,0 +1,82 @@
+:root {
+	--red: #ff1a25;
+	--blue: #1e90ff;
+	--green: #1aff2d; 
+	--yellow: #ffd91a;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #000000e8;
+	color: white;
+}
+
+.button > * {
+	width: 10em;
+	height: 10em;
+	border-radius: 10%;
+}
+
+.button button {
+	margin: 0.5em 0.5em;
+	border: 0em solid black;
+}
+
+.button button:hover {
+	transition: 0.25s;
+}
+
+.r {
+	background-color: var(--red);
+}
+.r:hover {
+	box-shadow:
+    0 0 7px 0px var(--red),
+    0 0 10px 0px var(--red),
+    0 0 20px 0px var(--red); 
+}
+.r:active {
+	background-color: #ff1a2567;
+}
+
+.b {
+	background-color: var(--blue);
+}
+.b:hover {
+	box-shadow:
+    0 0 7px 0px var(--blue),
+    0 0 10px 0px var(--blue),
+    0 0 20px 0px var(--blue); 
+}
+.b:active {
+	background-color: #1e8fff5d;
+}
+
+.g {
+	background-color: var(--green);
+}
+.g:hover {
+	box-shadow:
+    0 0 7px 0px var(--green),
+    0 0 10px 0px var(--green),
+    0 0 20px 0px var(--green); 
+}
+.g:active {
+	background-color: #1aff2d69;
+}
+
+.y {
+	background-color: var(--yellow);
+}
+.y:hover {
+	box-shadow:
+    0 0 7px 0px var(--yellow),
+    0 0 10px 0px var(--yellow),
+    0 0 20px 0px var(--yellow); 
+}
+.y:active {
+	background-color: #ffd91a63;
+}
