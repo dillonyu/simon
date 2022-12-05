@@ -29,54 +29,60 @@ body {
 	transition: 0.25s;
 }
 
-.r {
+#r {
 	background-color: var(--red);
 }
-.r:hover {
+#r:hover {
 	box-shadow:
     0 0 7px 0px var(--red),
     0 0 10px 0px var(--red),
     0 0 20px 0px var(--red); 
 }
-.r:active {
-	background-color: #ff1a2567;
+#r:active, .r-active {
+	background-color: #ff1a2567 !important;
 }
 
-.b {
+#b {
 	background-color: var(--blue);
 }
-.b:hover {
+#b:hover {
 	box-shadow:
     0 0 7px 0px var(--blue),
     0 0 10px 0px var(--blue),
     0 0 20px 0px var(--blue); 
 }
-.b:active {
-	background-color: #1e8fff5d;
+#b:active, .b-active {
+	background-color: #1e8fff5d !important;
 }
 
-.g {
+#g {
 	background-color: var(--green);
 }
-.g:hover {
+#g:hover {
 	box-shadow:
     0 0 7px 0px var(--green),
     0 0 10px 0px var(--green),
     0 0 20px 0px var(--green); 
 }
-.g:active {
-	background-color: #1aff2d69;
+#g:active, .g-active {
+	background-color: #1aff2d69 !important;
 }
 
-.y {
+#y {
 	background-color: var(--yellow);
 }
-.y:hover {
+#y:hover {
 	box-shadow:
     0 0 7px 0px var(--yellow),
     0 0 10px 0px var(--yellow),
     0 0 20px 0px var(--yellow); 
 }
-.y:active {
-	background-color: #ffd91a63;
+#y:active, .y-active {
+	background-color: #ffd91a63 !important;
+}
+
+body .div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
