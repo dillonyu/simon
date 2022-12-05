@@ -27,8 +27,8 @@ h1 {
 }
 
 .button > * {
-	width: 20em;
-	height: 20em;
+	width: 10em;
+	height: 10em;
 	border-radius: 10%;
 }
 
