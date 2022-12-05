@@ -1,5 +1,4 @@
 let level = [];
-let userInput = [];
 let count = 0;
 const red = document.getElementById("r-audio");
 const blue = document.getElementById("b-audio");
@@ -116,9 +115,9 @@ document.getElementById('r').addEventListener('click', function() {
         count++;
         if (count === level.length) {
             count = 0;
-            userInput = [];
             console.clear();
             document.getElementById("score-text").textContent = "Score: " + level.length;
+						disableButtons();
             setTimeout(() => {
                 nextLevel();
             }, 1000);
@@ -135,8 +134,8 @@ document.getElementById('b').addEventListener('click', function() {
         count++;
         if (count === level.length) {
             count = 0;
-            userInput = [];
             console.clear();
+						disableButtons();
             document.getElementById("score-text").textContent = "Score: " + level.length;
             setTimeout(() => {
                 nextLevel();
@@ -154,8 +153,8 @@ document.getElementById('g').addEventListener('click', function() {
         count++;
         if (count === level.length) {
             count = 0;
-            userInput = [];
             console.clear();
+						disableButtons();
             document.getElementById("score-text").textContent = "Score: " + level.length;
             setTimeout(() => {
                 nextLevel();
@@ -173,8 +172,8 @@ document.getElementById('y').addEventListener('click', function() {
         count++;
         if (count === level.length) {
             count = 0;
-            userInput = [];
             console.clear();
+						disableButtons();
             document.getElementById("score-text").textContent = "Score: " + level.length;
             setTimeout(() => {
                 nextLevel();
