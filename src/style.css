@@ -3,6 +3,7 @@
 	--blue: #1e90ff;
 	--green: #1aff2d; 
 	--yellow: #ffd91a;
+	--back: #000000e8
 }
 
 body {
@@ -10,8 +11,19 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: #000000e8;
+	background-color: var(--back);
 	color: white;
+	font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1 {
+	background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,45,121,1) 0%, rgba(0,212,255,1) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent; 
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+	font-size: 3rem;
+	font-style: italic;
 }
 
 .button > * {
@@ -26,7 +38,7 @@ body {
 }
 
 .button button:hover {
-	transition: 0.25s;
+	transition: 0.15s;
 }
 
 #r {
@@ -85,4 +97,61 @@ body .div {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+
+#score {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	margin-bottom: 0.8em;
+}
+
+#start {
+	width: 8em;
+	height: 4em;
+	margin: 0.5em;
+	color: white;
+	border: 1px solid goldenrod;
+	border-radius: 8px;
+	font-size: medium;
+	background-color: #00000000;
+	font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#start:hover {
+	background: goldenrod;
+}
+
+button {
+	cursor: pointer;
+}
+
+#game-over {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	color: red;
+}
+
+#game-over > * {
+	margin: 0;
+}
+
+#restart {
+	width: 8em;
+	height: 4em;
+	margin: 0.5em;
+	color: white;
+	border: 1px solid rgb(32, 218, 32);
+	border-radius: 8px;
+	font-size: medium;
+	background-color: #00000000;
+	text-align: center;
+	font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#restart:hover {
+	background: rgb(32, 218, 32);
 }

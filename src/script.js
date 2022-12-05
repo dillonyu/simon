@@ -6,18 +6,39 @@ const blue = document.getElementById("b-audio");
 const green = document.getElementById("g-audio");
 const yellow = document.getElementById("y-audio");
 
-var allAudios = document.querySelectorAll('audio');
+let audios = document.querySelectorAll('audio');
+
+const gameOver = document.getElementById("game-over");
+const restart = document.getElementById("restart");
 
 function stopAllAudio(){
-	allAudios.forEach(function(audio){
+	audios.forEach(function(audio) {
 		audio.pause();
         audio.currentTime = 0;
 	});
 }
 
+function disableButtons() {
+    document.getElementById("r").disabled = true;
+    document.getElementById("b").disabled = true;
+    document.getElementById("g").disabled = true;
+    document.getElementById("y").disabled = true;
+}
+
+function enableButtons() {
+    document.getElementById("r").disabled = false;
+    document.getElementById("b").disabled = false;
+    document.getElementById("g").disabled = false;
+    document.getElementById("y").disabled = false;
+}
+
 function nextLevel() {
+    disableButtons();
     level.push(Math.floor(Math.random() * 4) + 1);
     displaySequence();
+    setTimeout(() => {
+        enableButtons();
+    }, 600 * level.length);
 }
 
 function displaySequence() {
@@ -64,8 +85,27 @@ function displaySequence() {
     }
 }
 
-document.getElementById('start').addEventListener('click', function() {
+function toggleElement(element) {
+    if (element.style.display === "none") {
+        element.style.display = "block";
+    } else {
+        element.style.display = "none";
+    }
+}
+
+function handleGameOver() {
+    disableButtons();
+    toggleElement(gameOver);
+    toggleElement(restart);
+    score.style.marginBottom = "0";
+}
+
+const startButton = document.getElementById("start");
+const score = document.getElementById("score");
+startButton.addEventListener('click', function() {
     // Start the game
+    toggleElement(startButton);
+    toggleElement(score);
     nextLevel();
 });
 document.getElementById('r').addEventListener('click', function() {
@@ -78,12 +118,13 @@ document.getElementById('r').addEventListener('click', function() {
             count = 0;
             userInput = [];
             console.clear();
+            document.getElementById("score-text").textContent = "Score: " + level.length;
             setTimeout(() => {
                 nextLevel();
-            }, 700);
+            }, 1000);
         }
     } else if (count !== level.length) {
-        console.log("Game Over! You entered 1 when it was " + level[count]);
+        handleGameOver();
     }
 });
 document.getElementById('b').addEventListener('click', function() {
@@ -96,12 +137,13 @@ document.getElementById('b').addEventListener('click', function() {
             count = 0;
             userInput = [];
             console.clear();
+            document.getElementById("score-text").textContent = "Score: " + level.length;
             setTimeout(() => {
                 nextLevel();
-            }, 700);
+            }, 1000);
         }
     } else if (count !== level.length) {
-        console.log("Game Over! You entered 2 when it was " + level[count]);
+        handleGameOver();
     }
 });
 document.getElementById('g').addEventListener('click', function() {
@@ -114,12 +156,13 @@ document.getElementById('g').addEventListener('click', function() {
             count = 0;
             userInput = [];
             console.clear();
+            document.getElementById("score-text").textContent = "Score: " + level.length;
             setTimeout(() => {
                 nextLevel();
-            }, 700);
+            }, 1000);
         }
     } else if (count !== level.length) {
-        console.log("Game Over! You entered 3 when it was " + level[count]);
+        handleGameOver();
     }
 });
 document.getElementById('y').addEventListener('click', function() {
@@ -132,11 +175,23 @@ document.getElementById('y').addEventListener('click', function() {
             count = 0;
             userInput = [];
             console.clear();
+            document.getElementById("score-text").textContent = "Score: " + level.length;
             setTimeout(() => {
                 nextLevel();
-            }, 700);
+            }, 1000);
         }
     } else if (count !== level.length) {
-        console.log("Game Over! You entered 4 when it was " + level[count]);
+        handleGameOver();
     }
 });
+restart.addEventListener('click', function() {
+    // Restart the game
+    toggleElement(gameOver);
+    level = [];
+    document.getElementById("score-text").textContent = "Score: 0";
+    count = 0;
+    toggleElement(restart);
+    nextLevel();
+});
+
+disableButtons();
