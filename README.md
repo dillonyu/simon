@@ -1,2 +1,2 @@
 # simon
-Simon game made using React.
+Simon game
